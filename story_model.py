@@ -14,7 +14,7 @@ model = AutoModelWithLMHead.from_pretrained("skt/kogpt2-base-v2")
 # test tokenizer
 print(tokenizer.tokenize("안녕하세요. 한국어 GPT-2 입니다.😤:)l^o"))
 
-text = """벼랑 끝 외딴 호텔에 갇힌 용의자들."""
+text = """원하는 문장 입력하기"""
 input_ids = tokenizer.encode(text)
 gen_ids = model.generate(torch.tensor([input_ids]),
                                max_length=100,
