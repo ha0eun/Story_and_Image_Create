@@ -9,7 +9,7 @@ tokenizer = PreTrainedTokenizerFast.from_pretrained("skt/kogpt2-base-v2",
   bos_token='</s>', eos_token='</s>', unk_token='<unk>',        # 각각의 요소는 파라미터..?
   pad_token='<pad>', mask_token='<mask>')
 
-model = AutoModelWithLMHead.from_pretrained("./kogpt2novel/kogpt2novel")
+model = AutoModelWithLMHead.from_pretrained("skt/kogpt2-base-v2")
 
 # test tokenizer
 print(tokenizer.tokenize("안녕하세요. 한국어 GPT-2 입니다.😤:)l^o"))
@@ -69,7 +69,7 @@ print(lr)
 learn.fit_one_cycle(4, lr)
 
 
-prompt='우리집에는 무서운 사람이'
+prompt='원하는 문장을 입력하기'
 prompt_ids = tokenizer.encode(prompt)
 inp = tensor(prompt_ids)[None]
 preds = learn.model.generate(inp,
