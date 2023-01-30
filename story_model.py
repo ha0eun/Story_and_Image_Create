@@ -29,7 +29,7 @@ generated = tokenizer.decode(gen_ids[0,:].tolist())
 print(generated)
 
 
-with open('crawling/movie_story_all_new_Fin.csv', encoding='UTF8') as f:
+with open('crawling.csv', encoding='UTF8') as f:
     lines = f.read()
     lines = " ".join(lines.split())
 print(len(lines))
