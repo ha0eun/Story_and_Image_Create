@@ -53,7 +53,7 @@ splits = [[0],[1]]
 print('1')
 tls = TfmdLists([train,test], TransformersTokenizer(tokenizer), splits=splits, dl_type=LMDataLoader)
 print('2')
-batch,seq_len = 16, 512
+batch,seq_len = 8, 256
 print('3')
 dls = tls.dataloaders(bs=batch, seq_len=seq_len)
 print('4')
